@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { toast } from "sonner";
+import { toast } from "@/hooks/use-toast";
 import { Card } from "@/components/ui/card";
 import { Sparkles, ChevronUp } from "lucide-react";
 import { useMutation, useQuery } from "convex/react";
@@ -12,9 +12,8 @@ import { Id } from "@/convex/_generated/dataModel";
 import { formatDistanceToNow } from 'date-fns';
 import { useAuth } from "@clerk/nextjs";
 import config from "@/config";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
-import TagSelector from "@/components/tag-selector";
+import { TagSelector } from "@/components/tag-selector";
 import { Badge } from "@/components/ui/badge";
 
 const getStatusColor = (status: string) => {
@@ -71,12 +70,18 @@ export default function FeatureRequestPage() {
     e.preventDefault();
     
     if (!isSignedIn) {
-      toast.error("Please sign in to submit a feature request");
+      toast({
+        title: "Please sign in to submit a feature request",
+        variant: "destructive",
+      });
       return;
     }
 
     if (!request.trim()) {
-      toast.error("Please enter a feature request");
+      toast({
+        title: "Please enter a feature request",
+        variant: "destructive",
+      });
       return;
     }
 
@@ -86,11 +91,17 @@ export default function FeatureRequestPage() {
         request: request.trim(),
         tags: selectedTags
       });
-      toast.success("Feature request submitted successfully!");
+      toast({
+        title: "Feature request submitted successfully!",
+        variant: "default",
+      });
       setRequest("");
       setSelectedTags([]);
     } catch (error) {
-      toast.error("Failed to submit feature request");
+      toast({
+        title: "Failed to submit feature request",
+        variant: "destructive",
+      });
       console.error(error);
     } finally {
       setIsSubmitting(false);
@@ -99,21 +110,26 @@ export default function FeatureRequestPage() {
 
   const handleVote = async (featureId: Id<"featureRequests">) => {
     if (!isSignedIn) {
-      toast.error("Please sign in to vote");
+      toast({
+        title: "Please sign in to vote",
+        variant: "destructive",
+      });
       return;
     }
 
     try {
       await toggleVote({ id: featureId });
     } catch (error) {
-      toast.error("Failed to vote");
+      toast({
+        title: "Failed to vote",
+        variant: "destructive",
+      });
       console.error(error);
     }
   };
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
       <div className="container max-w-screen-2xl mx-auto pl-6 pr-4 sm:px-6 lg:px-8 py-12 pb-24">
         <div className="flex items-center gap-3 mb-3">
         <Sparkles className="h-6 w-6" style={{ color: config.theme.colors.primary }} />
