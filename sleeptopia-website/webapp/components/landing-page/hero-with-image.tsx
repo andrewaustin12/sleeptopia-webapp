@@ -55,7 +55,7 @@ export default function Hero() {
           {/* Right side - Image */}
           <div className="relative mt-8 lg:mt-0">
             <Image
-              src={`/${image.src}`}
+              src={image.src}
               alt={image.alt}
               width={1200}
               height={900}

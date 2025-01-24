@@ -151,7 +151,7 @@ const config = {
       description: "Our app provides a variety of guided exercises specifically designed to strengthen your airway muscles, promoting easier breathing and reducing sleep apnea symptoms. Whether you're new to managing sleep apnea or looking to enhance your current routine, our exercises cater to all levels and needs.",
       cta: "Start Your Journey",
       image: {
-        src: "/hero-mockup.png",
+        src: "/mockup-hero.png",
         alt: "Sleeptopia App Preview"
       },
       promotion: {
