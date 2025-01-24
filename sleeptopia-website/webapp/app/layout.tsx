@@ -4,6 +4,7 @@ import { getSEOTags } from "@/lib/seo";
 import { Providers } from "./providers/authproviders";
 import Header from "@/components/header";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react"
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -38,6 +39,7 @@ export default function RootLayout({
           {/* Main container for all pages */}
           <Header />
           <div>{children}</div>
+          <Analytics />
           <Toaster />
         </Providers>
       </body>
