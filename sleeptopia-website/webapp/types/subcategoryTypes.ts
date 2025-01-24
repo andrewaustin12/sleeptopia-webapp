@@ -1,0 +1,42 @@
+import { Category } from './categoryTypes';
+
+export const subcategoriesByCategory: Record<Category, readonly string[]> = {
+  "House": ["Deep House", "Tech House", "Progressive House", "Electro House", "Future House", "Tropical House", "Bass House"],
+  "Deep House": ["Soulful House", "Melodic House", "Organic House", "Lounge House"],
+  "Tech House": ["Minimal Tech House", "Peak Time Tech House", "Tribal Tech House"],
+  "Progressive House": ["Melodic Progressive", "Big Room Progressive", "Dark Progressive"],
+  "Techno": ["Minimal Techno", "Acid Techno", "Detroit Techno", "Industrial Techno", "Hard Techno"],
+  "Minimal Techno": ["Microhouse", "Dub Techno", "Romanian Minimal"],
+  "Trance": ["Progressive Trance", "Uplifting Trance", "Vocal Trance", "Tech Trance"],
+  "Psytrance": ["Full-On", "Dark Psy", "Forest Psy", "Progressive Psy"],
+  "Drum & Bass": ["Liquid DnB", "Jump Up", "Neurofunk", "Deep DnB", "Crossbreed"],
+  "Jungle": ["Ragga Jungle", "Atmospheric Jungle", "Hardcore Jungle"],
+  "Dubstep": ["Deep Dubstep", "Brostep", "Riddim", "Melodic Dubstep"],
+  "Future Bass": ["Melodic Bass", "Kawaii Bass", "Wave", "Trap Bass"],
+  "EDM": ["Festival House", "Commercial EDM", "Pop EDM"],
+  "Big Room": ["Festival Big Room", "Progressive Big Room", "Electro Big Room"],
+  "Hardstyle": ["Raw Hardstyle", "Euphoric Hardstyle", "Classic Hardstyle"],
+  "Hardcore": ["Frenchcore", "Uptempo", "Industrial Hardcore", "Terrorcore"],
+  "Ambient": ["Dark Ambient", "Space Music", "Drone", "Atmospheric"],
+  "Downtempo": ["Trip Hop", "Lounge", "Chillout", "Nu Jazz"],
+  "Garage": ["2-Step", "Future Garage", "Bass House", "Speed Garage"],
+  "UK Garage": ["2-Step Garage", "4x4 Garage", "Grime", "Bassline"],
+  "Breakbeat": ["Nu Skool Breaks", "Big Beat", "Progressive Breaks"],
+  "IDM": ["Glitch", "Experimental", "Ambient IDM", "Drill'n'Bass"],
+  "Industrial": ["EBM", "Industrial Techno", "Power Noise", "Dark Electro"],
+  "Hip-Hop": ["Trap", "Old School", "Underground", "Boom Bap"],
+  "R&B": ["Contemporary R&B", "Neo Soul", "Classic R&B", "Soul"],
+  "Disco": ["Nu Disco", "Italo Disco", "Classic Disco", "Disco House"],
+  "Funk": ["P-Funk", "G-Funk", "Future Funk", "Electro Funk"],
+  "Latin": ["Reggaeton", "Salsa", "Bachata", "Moombahton"],
+  "Reggae": ["Roots Reggae", "Dub", "Dancehall", "Modern Reggae"],
+  "Dancehall": ["Modern Dancehall", "Classic Dancehall", "Ragga", "Bashment"],
+  "Open Format": ["Top 40", "Party Rock", "Mashup", "Multi-Genre"],
+  "Mobile DJ": ["Wedding", "Corporate", "Private Events", "Karaoke"],
+  "Wedding DJ": ["Traditional", "Modern", "Ceremony", "Reception"],
+  "Club DJ": ["Nightclub", "Lounge", "Bar", "After Hours"],
+  "Turntablist": ["Scratch DJ", "Battle DJ", "Technical DJ", "Creative DJ"],
+  "Other": ["World Music", "Experimental", "Fusion", "Miscellaneous"]
+} as const;
+
+export type Subcategory = typeof subcategoriesByCategory[Category][number]; 
