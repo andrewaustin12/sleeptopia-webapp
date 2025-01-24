@@ -10,28 +10,37 @@ export const getSEOTags = (): Metadata => ({
   // Basic metadata
   title: {
     // Main title for your app - appears in search results and browser tabs
-    default: `${config.appName} - Full-Stack Boilerplate with Convex/Supabase`,
+    default: `${config.appName} - Stop Snoring & Sleep Apnea Exercises`,
     // Template for other pages: "Page Name | Your App Name"
-    template: "%s | ${config.appName}"
+    template: `%s | ${config.appName}`
   },
   // Main description used for search results and social sharing
-  description: config.appDescription,
+  description: "Reduce snoring and sleep apnea with proven exercises. Strengthen your airway muscles for better breathing and peaceful nights. Science-backed exercises to help you and your partner sleep better.",
   // Favicon and other icons
   icons: {
     icon: config.appIcon,
   },
   // Keywords help with SEO - add or remove based on your specific features
   keywords: [
-    "Next.js boilerplate",
-    "Convex database",
-    "Supabase starter",
-    "full-stack template",
-    "real-time database",
-    "relational database",
-    "MVP starter kit",
-    "authentication template",
-    "React boilerplate",
-    "TypeScript starter"
+    "stop snoring exercises",
+    "anti-snoring exercises",
+    "sleep apnea exercises",
+    "snoring exercises",
+    "stop snoring",
+    "snoring",
+    "snoring treatment",
+    "sleep apnea treatment",
+    "mouth exercises for sleep apnea",
+    "throat exercises for snoring",
+    "reduce snoring naturally",
+    "sleep breathing exercises",
+    "airway strengthening",
+    "snoring solutions",
+    "sleep apnea relief",
+    "better sleep exercises",
+    "stop sleep apnea",
+    "sleep apnea",
+    "sleep apnea treatment",
   ],
   // Author and creator information
   authors: [{ name: "Andy Oz" }],
@@ -45,15 +54,16 @@ export const getSEOTags = (): Metadata => ({
     locale: 'en_US',
     url: `https://${config.domainName}`,
     siteName: config.appName,
-    title: `${config.appName} - Next.js Boilerplate with Convex/Supabase`,
-    description: config.appDescription,
+    title: `${config.appName} - Stop Snoring with Simple Daily  apnea relief",
+    "sleep apnea relief",Exercises`,
+    description: "Transform your sleep with proven exercises that reduce snoring and sleep apnea. Track your progress, follow guided exercises, and enjoy peaceful nights.",
     // OG Image should be 1200x630px for best display on social platforms
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: `${config.appName} Preview`,
+        alt: `${config.appName} - Anti-Snoring & Sleep Apnea Exercise Program`,
       },
     ],
   },
@@ -61,8 +71,8 @@ export const getSEOTags = (): Metadata => ({
   // Twitter card metadata (for Twitter sharing)
   twitter: {
     card: 'summary_large_image',
-    title: `${config.appName} - Next.js Boilerplate with Convex/Supabase`,
-    description: config.appDescription,
+    title: `${config.appName} - Stop Snoring & Sleep Better Tonight`,
+    description: "Science-backed exercises to reduce snoring and sleep apnea. Start your journey to quieter, more restful sleep.",
     images: ['/og-image.png'],
     // Update with your Twitter handle in config
     creator: config.social.x,
@@ -102,30 +112,31 @@ export const renderSchemaTags = () => {
           "@context": "http://schema.org",
           "@type": "SoftwareApplication",
           name: config.appName,
-          description: config.appDescription,
-          image: `https://${config.domainName}/icon.png`,
+          description: "Anti-snoring and sleep apnea exercise app with guided routines, progress tracking, and daily reminders to help reduce snoring and improve sleep quality.",
+          image: `https://${config.domainName}/SleeptopiaAppIcon.ico`,
           url: `https://${config.domainName}/`,
           author: {
             "@type": "Person",
-            name: "Marc Lou",
+            name: "Andy Oz",
           },
           // Update these values based on your application
-          datePublished: "2023-08-01",
-          applicationCategory: "EducationalApplication",
+          datePublished: "2025-01-24",
+          applicationCategory: "HealthApplication",
           // Update or remove if not applicable
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: "4.8",
-            ratingCount: "12",
+            ratingValue: "5.0",
+            ratingCount: "120",
           },
           // Update or remove if not applicable
           offers: [
             {
               "@type": "Offer",
-              price: "9.00",
+              price: "0.00",
               priceCurrency: "USD",
             },
           ],
+          keywords: "stop snoring, sleep apnea exercises, anti-snoring exercises, better sleep, snoring solution",
         }),
       }}
     ></script>

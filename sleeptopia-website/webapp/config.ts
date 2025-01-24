@@ -33,7 +33,7 @@ const config = {
   appDescription:
     "Reduce sleep apnea symptoms with guided exercises. Strengthen your airway muscles for better breathing and restful nights. Enjoy improved sleep and vitality!",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
-  domainName: "sleeptopia.app",
+  domainName: "https://sleeptopia-webapp.vercel.app/",
 
   // REQUIRED: Update with your social media links
   social: {
