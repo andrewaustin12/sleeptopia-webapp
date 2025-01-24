@@ -53,13 +53,12 @@ export default function Hero() {
           </div>
 
           {/* Right side - Image */}
-          <div className="relative mt-8 lg:mt-0">
+          <div className="relative mt-8 lg:mt-0 h-[400px] sm:h-[500px] lg:h-[600px] w-full">
             <Image
               src={image.src}
               alt={image.alt}
-              width={1200}
-              height={900}
-              className="w-full h-auto scale-125"
+              fill
+              className="object-cover scale-110 px-4"
               priority
             />
           </div>
