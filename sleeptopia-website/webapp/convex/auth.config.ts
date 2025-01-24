@@ -16,7 +16,7 @@
 export default {
   providers: [
     {
-      domain: "https://enjoyed-squid-59.clerk.accounts.dev",
+      domain: "https://genuine-tick-79.clerk.accounts.dev",
       applicationID: "convex",
     },
   ]
