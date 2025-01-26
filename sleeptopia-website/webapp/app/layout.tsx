@@ -38,8 +38,11 @@ export default function RootLayout({
       
           {/* Main container for all pages */}
           <Header />
-          <div>{children}</div>
-          <Analytics />
+          <div>
+            {children}
+            <Analytics />
+          </div>
+          
           <Toaster />
         </Providers>
       </body>
