@@ -18,8 +18,8 @@ type LinkType = {
 // Centralized link configuration
 const footerLinks = {
   Links: [
-    { label: 'Features', href: '/features' },
-    { label: 'FAQ', href: '/faq' },
+    { label: 'Features', href: '/#features' },
+    { label: 'FAQ', href: '/#faq' },
     { label: 'Support', href: 'https://www.ideasandbugz.com/feedback/sleeptopia', isExternal: true },
     { label: 'Instagram', href: 'https://www.instagram.com/sleeptopia_app/', isExternal: true },
   ],
@@ -53,10 +53,22 @@ const FooterLink = ({ link }: { link: LinkType }) => {
     );
   }
   
+  // Handle smooth scrolling for internal hash links
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (link.href.startsWith('/#')) {
+      e.preventDefault();
+      const element = document.querySelector(link.href.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+  
   return (
     <Link 
       href={link.href}
       className="text-gray-500 hover:text-gray-800 transition-colors text-sm"
+      onClick={handleClick}
     >
       {link.label}
     </Link>

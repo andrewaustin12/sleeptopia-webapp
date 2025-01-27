@@ -3,9 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { useAuth, UserButton } from "@clerk/clerk-react";
-import { SignInButton, SignUpButton } from "@clerk/clerk-react";
 import { Menu, X } from "lucide-react";
 import config from "@/config";
 //import { ModeToggle } from "./themetoggle";
@@ -47,12 +45,12 @@ const LoggedInHeader = () => {
 
         {/* Desktop navigation */}
         <nav className="hidden lg:flex items-center gap-6">
-          <Link 
+          {/* <Link 
             href="/dashboard" 
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
           >
             Dashboard
-          </Link>
+          </Link> */}
           <UserButton/>
         </nav>
 
@@ -151,7 +149,7 @@ const LoggedOutHeader = () => {
         </nav>
 
         {/* Desktop auth buttons */}
-        <div className="hidden lg:flex gap-4">
+        {/* <div className="hidden lg:flex gap-4">
           <SignInButton mode="modal">
             <Button size="lg" className="font-semibold" variant="outline">
               Sign In
@@ -166,7 +164,7 @@ const LoggedOutHeader = () => {
               Sign Up
             </Button>
           </SignUpButton>
-        </div>
+        </div> */}
 
         {/* Mobile navigation */}
         {isMenuOpen && (
@@ -204,7 +202,7 @@ const LoggedOutHeader = () => {
               >
                 Feature Request
               </Link>
-              <div className="flex flex-col gap-2 pt-4">
+              {/* <div className="flex flex-col gap-2 pt-4">
                 <SignInButton mode="modal">
                   <Button size="lg" className="w-full font-semibold" variant="outline">
                     Sign In
@@ -219,7 +217,7 @@ const LoggedOutHeader = () => {
                     Sign Up
                   </Button>
                 </SignUpButton>
-              </div>
+              </div> */}
             </nav>
           </div>
         )}
