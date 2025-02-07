@@ -130,14 +130,12 @@ const LoggedOutHeader = () => {
           >
             FAQ
           </Link>
-          {/* <Link 
+          <Link 
             href="/blog" 
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             Blog
-          </Link> */}
+          </Link>
           <Link 
             href="https://www.ideasandbugz.com/feedback/sleeptopia" 
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
@@ -184,15 +182,13 @@ const LoggedOutHeader = () => {
               >
                 FAQ
               </Link>
-              {/* <Link 
+              <Link 
                 href="/blog" 
                 className="py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
                 onClick={() => setIsMenuOpen(false)}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 Blog
-              </Link> */}
+              </Link>
               <Link 
                 href="https://www.ideasandbugz.com/feedback/sleeptopia" 
                 className="py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"

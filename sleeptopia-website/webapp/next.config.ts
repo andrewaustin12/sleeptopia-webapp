@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+import createMDX from '@next/mdx';
 
 /**
  * Next.js Configuration File
@@ -10,9 +10,15 @@ import type { NextConfig } from "next";
  * 3. Enable/disable Next.js features
  * 4. Configure build settings
  */
-const nextConfig: NextConfig = {
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+});
+
+const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     // Configure allowed external image domains for next/image
     // Without this, external images won't load with next/image component
@@ -20,19 +26,19 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       // NextJS <Image> component needs to whitelist domains for src={}
       {
-        protocol: 'https',
+        protocol: 'https' as const,
         hostname: 'lh3.googleusercontent.com', // Google OAuth profile pictures
       },
       {
-        protocol: 'https',
+        protocol: 'https' as const,
         hostname: 'pbs.twimg.com', // Twitter profile pictures and media
       },
       {
-        protocol: 'https',
+        protocol: 'https' as const,
         hostname: 'images.unsplash.com', // Unsplash image library
       },
       {
-        protocol: 'https',
+        protocol: 'https' as const,
         hostname: 'logos-world.net', // Logo images
       },
     ],
@@ -56,6 +62,7 @@ const nextConfig: NextConfig = {
   // - webpack: Custom webpack config
   // - env: Environment variables
   // - i18n: Internationalization settings
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 };
 
-export default nextConfig;
+export default withMDX(nextConfig);
