@@ -6,15 +6,12 @@ import AppPromotion from '@/components/app-promotion';
 import { Metadata, ResolvingMetadata } from 'next';
 import config from '@/config';
 
-type Props = {
-  params: { slug: string }
-}
-
 export async function generateMetadata(
-  { params }: Props,
+  { params }: { params: Promise<{ slug: string }> },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const post = await getBlogPost(params.slug);
+  const { slug } = await params;
+  const post = await getBlogPost(slug);
   
   if (!post) {
     return {
@@ -60,8 +57,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPost({ params }: Props) {
-  const { slug } = params;
+export default async function BlogPost({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }> 
+}) {
+  const { slug } = await params;
   const post = await getBlogPost(slug);
   
   if (!post) {
@@ -90,21 +91,17 @@ export default async function BlogPost({ params }: Props) {
           prose-strong:font-bold prose-em:italic
           prose-hr:border-muted
           [&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
-          <header className="mb-8">
-            <h1 className="mb-2">{post.title}</h1>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <time dateTime={post.date} className="text-sm">
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </time>
-              <span className="text-sm">•</span>
-              <span className="text-sm">{post.readingTime}</span>
-            </div>
-            <p className="mt-4 text-lg text-muted-foreground">{post.description}</p>
-          </header>
+          <div className="flex items-center gap-2 text-muted-foreground mb-8">
+            <time dateTime={post.date} className="text-sm">
+              {new Date(post.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </time>
+            <span className="text-sm">•</span>
+            <span className="text-sm">{post.readingTime}</span>
+          </div>
           <BlogContent content={post.content} />
         </article>
         <AppPromotion {...promotionProps} />
