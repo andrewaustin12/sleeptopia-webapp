@@ -60,7 +60,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+export default async function BlogPost({ params }: Props) {
   const { slug } = params;
   const post = await getBlogPost(slug);
   
