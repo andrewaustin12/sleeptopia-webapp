@@ -33,7 +33,7 @@ export const getSEOTags = (): Metadata => ({
     "exercise for snoring",
     "exercise for sleep apnea",
     "snoring treatment",
-    "sleep apnea treatment",
+    "sleep apnea relief",
     "mouth exercises for sleep apnea",
     "throat exercises for snoring",
     "reduce snoring naturally",
@@ -44,16 +44,11 @@ export const getSEOTags = (): Metadata => ({
     "better sleep exercises",
     "stop sleep apnea",
     "sleep apnea",
-    "sleep apnea treatment",
     "CPAP alternatives",
     "CPAP Machine",
     "CPAP",
-    "CPAP Machine Reviews",
-    "CPAP Machine Reviews 2025",
-    "CPAP Machine Reviews 2024",
-    "CPAP Machine Reviews 2023",
-    "CPAP Machine Reviews 2022",
-    "CPAP Machine Reviews 2021",
+   
+   
   ],
   // Author and creator information
   authors: [{ name: "Andy Oz" }],
@@ -67,8 +62,7 @@ export const getSEOTags = (): Metadata => ({
     locale: 'en_US',
     url: `https://${config.domainName}`,
     siteName: config.appName,
-    title: `${config.appName} - Stop Snoring with Simple Daily  apnea relief",
-    "sleep apnea relief",Exercises`,
+    title: `${config.appName} - Stop Snoring and Sleep Apnea with Simple Daily Exercises`,
     description: "Transform your sleep with proven exercises that reduce snoring and sleep apnea. Track your progress, follow guided exercises, and enjoy peaceful nights.",
     // OG Image should be 1200x630px for best display on social platforms
     images: [

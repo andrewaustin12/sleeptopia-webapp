@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Sitemap: https://sleeptopia.app/sitemap.xml
+
+# Allow all bots to access all content
+User-agent: *
+Disallow:
+
+# Allow Google bot specific directives
+User-agent: Googlebot
+Allow: / 

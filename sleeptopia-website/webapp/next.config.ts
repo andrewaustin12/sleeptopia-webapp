@@ -11,6 +11,8 @@ import type { NextConfig } from "next";
  * 4. Configure build settings
  */
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
   images: {
     // Configure allowed external image domains for next/image
     // Without this, external images won't load with next/image component
@@ -34,6 +36,19 @@ const nextConfig: NextConfig = {
         hostname: 'logos-world.net', // Logo images
       },
     ],
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'index,follow'
+          }
+        ],
+      },
+    ];
   },
   // Other common config options (currently not used):
   // - rewrites(): Modify incoming request paths
