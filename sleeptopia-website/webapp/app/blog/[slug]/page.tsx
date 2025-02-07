@@ -5,6 +5,7 @@ import BlogContent from '@/components/blog-content';
 import AppPromotion from '@/components/app-promotion';
 import { Metadata, ResolvingMetadata } from 'next';
 import config from '@/config';
+import Link from 'next/link';
 
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> },
@@ -76,7 +77,15 @@ export default async function BlogPost({
 
   return (
     <div className="flex flex-col min-h-screen">
-      <main className="flex-1 container max-w-3xl mx-auto px-6 py-12">
+      <main className="flex-1 container max-w-4xl mx-auto px-6 py-12">
+        <div className="mb-8">
+          <Link 
+            href="/blog" 
+            className="text-muted-foreground hover:text-primary flex items-center gap-2"
+          >
+            ← Back to Blog
+          </Link>
+        </div>
         <article className="prose prose-lg dark:prose-invert max-w-none
           prose-headings:font-bold prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl 
           prose-p:leading-relaxed prose-p:mb-4 
