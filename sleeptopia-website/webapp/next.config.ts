@@ -44,13 +44,26 @@ const nextConfig = {
     ],
   },
   async headers() {
+    // Only set index headers in production
+    if (process.env.NODE_ENV !== 'production') {
+      return [];
+    }
+
     return [
       {
+        // Be more specific about which domains get the index directive
         source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            key: 'host',
+            value: 'www.sleeptopia.us',
+          },
+        ],
         headers: [
           {
             key: 'X-Robots-Tag',
-            value: 'index,follow'
+            value: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'
           }
         ],
       },
