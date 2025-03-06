@@ -100,9 +100,6 @@ export const getSEOTags = (): Metadata => ({
 
   // Search engine verification codes
   // Get these from Google Search Console, Bing Webmaster Tools, etc.
-  verification: {
-    google: 'your-google-verification-code',
-  },
 });
 
 /**
